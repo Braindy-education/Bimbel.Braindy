@@ -1,0 +1,67 @@
+/* RESET & GLOBAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* GRADIENT HERO */
+.hero-gradient {
+    background: linear-gradient(135deg, #F0F9FF 0%, #FFFFFF 100%);
+}
+
+/* ANIMASI MASKOT (MELAYANG) */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* EKOR BUBBLE CHAT */
+.bubble-tail::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid white;
+}
+
+/* OPTIMASI TAMPILAN MOBILE */
+@media (max-width: 640px) {
+    .bubble-tail::after {
+        right: 15px;
+    }
+    
+    h1 {
+        line-height: 1.2;
+    }
+}
+
+/* HOVER TRANSITIONS */
+a, button {
+    transition: all 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: none;
+}
